@@ -22,7 +22,10 @@ class Test_basic_ANN(unittest.TestCase):
 			for y in x:
 				self.assertTrue(y != 0)
 		test_output = self.network.feed_forward([np.array([[1], [0]])])
+		print "test output"
 		print test_output
+		for x in range(0, 2):
+			self.assertTrue(test_output[x] == ANN.sigmoid(self.network.input_weights[x][0]))
 
 
 def main():

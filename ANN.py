@@ -18,6 +18,6 @@ class basic_ANN:
 	# this takes an input array and outputs an output array
 
 	def feed_forward(self, input):
-		hidden_inputs = np.dot(self.input_weights, input)
-		np.array(map(sigmoid, hidden_inputs))
+		hidden_inputs = np.array(map(sigmoid, np.dot(self.input_weights, input)))
+		# np.array(map(sigmoid, hidden_inputs))
 		return hidden_inputs
