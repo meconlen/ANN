@@ -7,4 +7,4 @@ class basic_ANN:
 		self.hidden_nodes = hidden_n
 		self.output_nodes = output_n
 		self.input_weights = np.random.randn(self.hidden_nodes, self.input_nodes);
-		
+		self.output_weights = np.random.randn(self.output_nodes, self.hidden_nodes);
