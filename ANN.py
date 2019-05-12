@@ -1,5 +1,8 @@
 import numpy as np
 
+def sigmoid(x):
+	return 1/(1+np.exp(-x))
+
 
 class basic_ANN:
 	# This sets up the network as a pair of weight arrays 
@@ -11,12 +14,10 @@ class basic_ANN:
 		self.input_weights = np.random.randn(self.hidden_nodes, self.input_nodes)
 		self.output_weights = np.random.randn(self.output_nodes, self.hidden_nodes)
 
-	def sigmoid(x):
-		return 1/(1+np.exp(-x))
 
 	# this takes an input array and outputs an output array
 
-	def feed_forward(input):
-		hidden_inputs = np.matmul(input_weights, input)
-		np.array(map(self.sigmoid, hidden_inputs))
+	def feed_forward(self, input):
+		hidden_inputs = np.dot(self.input_weights, input)
+		np.array(map(sigmoid, hidden_inputs))
 		return hidden_inputs
