@@ -18,3 +18,8 @@ class basic_ANN:
 		hidden_inputs = sigmoid(np.dot(self.input_weights, input.transpose()))
 		outputs = sigmoid(np.dot(self.output_weights, hidden_inputs))
 		return outputs
+
+	def train(self, input, ideal):
+		output = self.feed_forward(input)
+		error = np.linalg.norm(ideal - output)
+		return error
