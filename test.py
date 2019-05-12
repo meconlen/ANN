@@ -18,10 +18,12 @@ class Test_basic_ANN(unittest.TestCase):
 		for x in self.network.input_weights:
 			for y in x:
 				self.assertTrue(y != 0)
-
 		for x in self.network.output_weights:
 			for y in x:
 				self.assertTrue(y != 0)
+		test_output = feed_forward(np.array([1, 0]))
+		print self.test_output
+
 
 def main():
 	print("Testing")
